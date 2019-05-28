@@ -1,6 +1,6 @@
 {
 
-    "development2": {
+    "development": {
 
         "username": "root",
 
@@ -28,7 +28,7 @@
 
     },
 
-    "development": {
+    "development2": {
 
         "username": "super",
 
