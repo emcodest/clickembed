@@ -1,0 +1,84 @@
+body{
+    position: relative;
+}
+.pull-right{
+    float: right;
+    border: none;
+    background: red;
+    color: #fff;
+}
+
+/* CTA1 */
+#___cta1{
+    position: fixed; 
+    width: 500px; 
+    /* height: 200px;  */
+  
+    background: #c0b7b7; 
+    z-index: 100000; 
+    bottom: 0px; 
+    right: 0px; 
+    font-family: initial !important;  
+    font-size: initial !important;
+    
+
+}
+#___cta1 #_cta1__btn{
+   
+    width: 20px;  
+    border: none; 
+    border-radius: 12px; 
+    padding: 6px; 
+    margin: 0px !important; 
+    text-align: center; 
+    float: right; 
+    font-size: 0.7em; 
+    background: red; color: #fff; 
+}
+
+/* #___cta1 .side1{
+    float: left; 
+    width: 10%;
+    margin: 10px 10px 10px 10px; 
+    padding: 0px 0px 0px 0px;
+}
+
+#___cta1 .side2{
+    float: left; 
+    width: 80%;
+    margin: 10px 10px 10px 10px; 
+    padding: 0px 0px 0px 0px;
+}
+#___cta1 .main-content{
+  border: 1px solid black;
+  width: 350px;
+  height: 120px;
+  clear: both;
+
+} */
+
+#___cta1 .cta-btn{
+    text-decoration: none; 
+    width: 120px; 
+    padding: 10px 10px 10px 10px; 
+    margin: 0px 0px 0px 0px; 
+    background: red; color: #fff
+}
+
+/* CTA2 */
+
+#_cta2__{
+
+
+}
+
+
+
+
+
+
+/* CTA3 */
+#_cta3__{
+
+
+}

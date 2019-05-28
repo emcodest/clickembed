@@ -1,0 +1,45 @@
+{
+
+    "development2": {
+
+        "username": "root",
+
+        "password": "",
+
+        "database": "clickembed",
+
+        "host": "localhost",
+
+        "dialect": "mysql"
+
+    },
+
+    "test": {
+
+        "username": "",
+
+        "password": null,
+
+        "database": "",
+
+        "host": "",
+
+        "dialect": "mysql"
+
+    },
+
+    "development": {
+
+        "username": "super",
+
+        "password": "##(*($*$**V/*ddW`!hdhdhASFFFF",
+
+        "database": "clickembed",
+
+        "host": "127.0.0.1",
+
+        "dialect": "mysql"
+
+    }
+
+}

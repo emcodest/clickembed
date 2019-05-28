@@ -1,0 +1,368 @@
+<%- body %>
+<link href="//cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
+
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/__ema_cta_style.css">
+
+
+
+
+<%- include("cta1")  %>
+
+<%- include("configure")  %>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+<script src="js/j.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+<script
+  src="https://cdn.rawgit.com/kensnyder/quill-image-resize-module/3411c9a7/image-resize.min.js"></script>
+
+<script src="js/cta.js"></script>
+
+
+<script>
+  var options = {
+    debug: 'false',
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, 3, 4, 5, false] }],
+        ['bold', 'italic', 'underline'],
+        ['image']
+      ],
+      imageResize: {
+
+      }
+    },
+    placeholder: 'edit',
+    theme: 'bubble'
+  };
+  var options_x = {
+    debug: 'true',
+    modules: {
+      toolbar: [
+
+        ["image"]
+      ],
+      imageResize: {
+        displaySize: false
+      }
+    },
+    placeholder: 'image',
+    theme: 'bubble'
+  };
+  var container = document.getElementById('_____cta_____1editor');
+  var container_img = document.getElementById('_____cta_____1editor_img');
+  var editor = new Quill(container, options);
+  var editor_img = new Quill(container_img, options_x);
+  editor_img.on('text-change', function (delta, oldDelta, source) {
+    $('#fake-newline').html("")
+   
+    if($("#_____cta_____1editor_img").find(".ql-editor").html() == "<p><br></p>"){
+      $("#_____cta_____1editor_img").find(".ql-editor").html("doubleclick")
+    }
+  });
+  editor_img.on('selection-change', function (delta, oldDelta, source) {
+    if (source == 'api') {
+      console.log("An API call triggered this change.");
+    } else if (source == 'user') {
+
+      $('#fake-newline').html("<br><br><br><br><br>")
+      setTimeout(function () {
+        // $('#fake-newline').html("")
+      }, 900);
+    }
+
+  });
+
+
+  var ___cta_obj = {
+
+    image: ko.observable(""),
+    image_width: ko.observable("30"),
+
+
+    content: ko.observable("<h2>Hello World</h2><p>welcome to clickembed</p>"),
+    content_border: ko.observable("2px dashed #333"),
+    content_background: ko.observable("#000000"),
+    content_color: ko.observable("#cccccc"),
+
+    button_color: ko.observable("#ffffff"),
+    button_align: ko.observable("right"),
+    button_spacing: ko.observable("30"),
+    button_bg_color: ko.observable("#000000"),
+    button_text: ko.observable("Buy Now!"),
+    button_link: ko.observable("http://google.com"),
+
+    canvas_bg: ko.observable("#ffff00"),
+    canvas_color: ko.observable("#000000"),
+    canvas_position: ko.observable("bottom-right"),
+    canvas_height: ko.observable("210"),
+
+    canvas_close_btn_bg: ko.observable("#000000"),
+    canvas_close_btn_color: ko.observable("#333333"),
+    canvas_close_btn_text: ko.observable("X"),
+    
+    InitObj: function () {
+      // content
+      this.ApplyContent(this.content())
+      this.ApplyContentBorder(this.content_border())
+      this.ApplyContentBoxBg(this.content_background())
+      this.ApplyContentBoxColor(this.content_color())
+
+      // image
+      this.ApplyImage(this.image())
+      this.ApplyImageWidth(this.image_width())
+
+      // cta button
+      this.ApplyButtonColor(this.button_color())
+      this.ApplyButtonBgColor(this.button_bg_color())
+      this.ApplyButtonLink(this.button_link())
+      this.ApplyButtonText(this.button_text())
+      this.ApplyButtonAlign(this.button_align())
+      this.ApplyButtonSpacing(this.button_spacing())
+      // canvas
+      this.ApplyCanvasBg(this.canvas_bg())
+      this.ApplyCanvasColor(this.canvas_color())
+      this.ApplyCanvasHeight(this.canvas_height())
+      this.ApplyCloseButtonBg(this.canvas_close_btn_bg())
+      this.ApplyCloseButtonColor(this.canvas_close_btn_color())
+      this.ApplyCloseButtonText(this.canvas_close_btn_text())
+
+    },
+    TestFunc: function () {
+
+      // editor.setText('')
+      // editor.clipboard.dangerouslyPasteHTML(0, this.content())
+      // alert(444)
+    },
+    ApplyImage: function (image) {
+
+
+      editor_img.setText('')
+      editor_img.clipboard.dangerouslyPasteHTML(0, image)
+
+    },
+    ApplyImageWidth: function (per) {
+
+
+      var rem = parseInt(per)
+      var other = 100 - rem
+
+      $("._____ctaside1").css("width", "" + rem + "%")
+      $("._____ctaside2").css("width", "" + other + "%")
+      this.image_width(per)
+    },
+
+    ApplyContent: function (content) {
+
+      //set content
+      editor.setText('')
+      editor.clipboard.dangerouslyPasteHTML(0, content)
+    },
+    ApplyContentBorder: function (border) {
+
+
+      $(".______content_border").css("border", border)
+      this.content_border(border)
+
+    },
+    ApplyContentBoxBg: function (color) {
+
+
+      $(".______content_border").css("background", color)
+      this.content_background(color)
+
+    },
+    ApplyContentBoxColor: function (color) {
+
+
+      $(".______content_border").css("color", color)
+      this.content_color(color)
+
+    },
+
+    ApplyButtonColor: function (color) {
+      $("#___cta1 .cta-btn").css("color", color)
+      this.button_color(color)
+    },
+    ApplyButtonBgColor: function (color) {
+      $("#___cta1 .cta-btn").css("background", color)
+      this.button_bg_color(color)
+    },
+    ApplyButtonText: function (text) {
+      $("#___cta1 .cta-btn").text(text)
+      this.button_text(text)
+    },
+    ApplyButtonLink: function (link) {
+      $("#___cta1 .cta-btn").attr("href", link)
+      this.button_link(link)
+    },
+    ApplyCanvasHeight: function (pos) {
+      $("#___cta1").css("height", pos+"px")
+      this.canvas_height(pos)
+    },
+    ApplyCanvasPosition: function (pos) {
+      this.canvas_position(pos)
+     
+    },
+    ApplyCanvasBg: function (bg) {
+      $("#___cta1").css("background", bg)
+      this.canvas_bg(bg)
+    },
+    ApplyCanvasColor: function (color) {
+      $("#___cta1").css("color", color)
+      this.canvas_color(color)
+    },
+    ApplyCloseButtonBg: function (color) {
+      $("#___cta1 #_cta1__btn").css("background", color)
+      this.canvas_close_btn_bg(color)
+    },
+    ApplyCloseButtonColor: function (color) {
+      $("#___cta1 #_cta1__btn").css("color", color)
+      this.canvas_close_btn_color(color)
+    },
+    ApplyCloseButtonText: function (text) {
+      $("#___cta1 #_cta1__btn").text(text)
+      this.canvas_close_btn_text(text)
+    },
+
+
+    ApplyButtonAlign: function (para) {
+      $("#___cta1").css("text-align", para)
+      this.button_align(para)
+    },
+    ApplyButtonSpacing: function (para) {
+
+      $("#___cta1 .cta-btn").css("margin", para + "px")
+      this.button_spacing(para)
+    }
+
+
+
+  }
+
+
+  var __configure_obj = {
+    // ------------------------------- cta
+    button_link: ko.observable(___cta_obj.button_link()),
+    button_text: ko.observable(___cta_obj.button_text()),
+    button_align: ko.observable(___cta_obj.button_align()),
+    button_spacing: ko.observable(___cta_obj.button_spacing()),
+    button_bg_color: ko.observable(___cta_obj.button_bg_color()),
+    button_color: ko.observable(___cta_obj.button_color()),
+    button_text: ko.observable(___cta_obj.button_text()),
+
+    button_align: ko.observable(___cta_obj.button_align()),
+
+    button_spacing: ko.observable(___cta_obj.button_spacing()),
+
+    button_bg_color: ko.observable(___cta_obj.button_bg_color()),
+
+    // --------------------- canvas
+    canvas_close_btn_bg: ko.observable(___cta_obj.canvas_close_btn_bg()),
+    canvas_close_btn_color: ko.observable(___cta_obj.canvas_close_btn_color()),
+
+    canvas_color: ko.observable(___cta_obj.canvas_color()),
+    canvas_bg: ko.observable(___cta_obj.canvas_bg()),
+
+    canvas_position: ko.observable(___cta_obj.canvas_position()),
+    canvas_height: ko.observable(___cta_obj.canvas_height()),
+    // ----------------------content box
+    content_border: ko.observable(___cta_obj.content_border()),
+    content_background: ko.observable(___cta_obj.content_background()),
+    content_color: ko.observable(___cta_obj.content_color()),
+
+    // ----------- cta button
+    UpdateButtonText: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyButtonText(nn)
+    },
+    UpdateButtonLink: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyButtonLink(nn)
+
+
+    },
+    UpdateButtonAlign: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyButtonAlign(nn)
+
+    },
+    UpdateButtonSpace: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyButtonSpacing(nn)
+
+    },
+    UpdateButtonBg: function (data, event) {
+      var nn = $(event.currentTarget).val()
+
+      ___cta_obj.ApplyButtonBgColor(nn)
+
+    },
+    UpdateButtonColor: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyButtonColor(nn)
+
+    },
+
+    // --------- canvas
+    UpdateCanvasBtnCloseBg: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCloseButtonBg(nn)
+
+    },
+    UpdateCanvasBtnCloseColor: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCloseButtonColor(nn)
+
+    },
+    UpdateCanvasPosition: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCanvasPosition(nn)
+
+    },
+    UpdateCanvasHeight: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCanvasHeight(nn)
+
+    },
+    UpdateCanvasBgColor: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCanvasBg(nn)
+
+    },
+    UpdateCanvasColor: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyCanvasColor(nn)
+
+    },
+    UpdateContentBoxBg: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyContentBoxBg(nn)
+
+    },
+    UpdateContentBoxColor: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyContentBoxColor(nn)
+
+    },
+    UpdateContentBoxBorder: function (data, event) {
+      var nn = $(event.currentTarget).val()
+      ___cta_obj.ApplyContentBorder(nn)
+
+    }
+
+
+  }
+
+  ko.applyBindings(___cta_obj, document.getElementById('___cta1'))
+
+  ko.applyBindings(__configure_obj, document.getElementById('configure____'))
+
+
+
+</script>

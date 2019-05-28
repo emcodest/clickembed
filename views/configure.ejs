@@ -1,0 +1,204 @@
+<cta id="configure____"
+    style="position: fixed; width: 40hv; height: 50vh; border: 2px solid #e4e2eb; background: #fafafa; z-index: 10000000; bottom: 0px; right: 0px; top: 12px; font-family: initial !important;  font-size: initial !important; overflow-y: scroll">
+    <button id="configure____configure_btn"
+        style="float: left; font-size: 0.8em; background: red; color: #fff; border: none; border-radius: 4px; padding: 12px "><img
+            src="gallery/settings.jpg" width="20px" /></button>
+    <!-- <button  id = "__hide-cta__" class = "pull-right">hide X</button> -->
+    <div class="cta-body-configure">
+
+        <div style="clear: both"></div>
+        <div class="left" style="float: left; margin: 2px 2px 2px 2px; padding: 0px 0px 0px 0px">
+
+            <div id="c-logo">
+                <p style="padding: 9px; background: red; color: #fff"><b><span
+                            id="______cta_display_"></span></b></p>
+                <style>
+                    ._customize_interface td {
+                        padding: 6px;
+                    }
+                </style>
+                <div style="float: left; width: 300px;">
+                    <div class_="image-panel">
+                        <p><b> &nbsp;Width: </b>
+                            <select class="____ChangeImgBox">
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                                <option value="40">40%</option>
+                                <option value="50">50%</option>
+
+
+                            </select></p>
+                    </div>
+
+                    <div class_="content-box-panel">
+
+                        <table>
+                            <tr>
+                                <td>
+
+                                    <p><b>Border: </b>
+                                        <select data-bind="event: { 'change': UpdateContentBoxBorder }, value: content_border">
+                                            <option value="none">None</option>
+                                            <option value="0.5px solid #333">0.5 thick</option>
+                                            <option value="1px solid #333">1 thick</option>
+                                            <option value="2px solid #333">2 thick</option>
+                                            <option value="0.5px dashed #333">0.5 dashed</option>
+                                            <option value="1px dashed #333">1 dashed</option>
+                                            <option value="2px dashed #333">2 dashed</option>
+
+                                        </select></p>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><b> Background: </b>
+                                        <input data-bind="event: { 'change': UpdateContentBoxBg }, value: content_background" style="padding: 3px" type='color' />
+                                    </p>
+                                </td>
+                                <td>
+                                    <p><b> Text Color: </b>
+                                        <input data-bind="event: { 'change': UpdateContentBoxColor }, value: content_color" style="padding: 3px" type='color' />
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                    <div class_="call-to-action-btn">
+                        <p><b> Button Link: </b>
+                            <input data-bind="event: { 'keyup': UpdateButtonLink }, value: button_link"
+                                class="____CTAbtnLink" style="padding: 3px; width: 100%" type='text'
+                                placeholder="http://example.com" />
+                        </p>
+                        <p><b> Button Text: </b>
+                            <input data-bind="event: { 'keyup': UpdateButtonText }, value: button_text"
+                                class="____CTAbtnText" style="padding: 3px; width: 100%" type='text'
+                                placeholder="buy now" />
+                        </p>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p><b> Alignment: </b>
+                                        <select
+                                            data-bind="event: { 'change': UpdateButtonAlign }, value: button_align">
+                                            <option class="left">Left</option>
+                                            <option class="center">Center</option>
+                                            <option class="right">Right</option>
+                                        </select>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p><b>Spacing: </b>
+                                        <input
+                                            data-bind="event: { 'change': UpdateButtonSpace }, value: button_spacing"
+                                            style="padding: 3px; width: 30px" type='number' />
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><b> Background: </b>
+                                        <input
+                                            data-bind="event: { 'change': UpdateButtonBg }, value: button_bg_color"
+                                            style="padding: 3px" type='color' />
+                                    </p>
+                                </td>
+                                <td>
+                                    <p><b> Color: </b>
+                                        <input
+                                            data-bind="event: { 'change': UpdateButtonColor }, value: button_color"
+                                            style="padding: 3px" type='color' />
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                    <div class_="calltoactionbox">
+                        <p><b> x Button Bg Color: </b>
+                            <input
+                                data-bind="event: { 'change': UpdateCanvasBtnCloseBg }, value: canvas_close_btn_bg"
+                                style="padding: 3px" type='color' />
+                        </p>
+                        <p><b> x Button Color: </b>
+                            <input
+                                data-bind="event: { 'change': UpdateCanvasBtnCloseColor }, value: canvas_close_btn_color"
+                                style="padding: 3px" type='color' />
+                        </p>
+                        <table class="_customize_interface">
+
+
+                            <tr>
+                                <td><b>Position:</b></td>
+                                <td>
+                                    <select
+                                        data-bind="event: { 'change': UpdateCanvasPosition }, value: canvas_position">
+                                        <option value="top-left">Top Left</option>
+                                        <option value="top-right">Top Right</option>
+                                        <option value="bottom-left">Bottom Left</option>
+                                        <option value="bottom-right">Bottom Right</option>
+                                    </select></td>
+
+
+
+                            </tr>
+                            <tr>
+                                <td><b>Height:</b></td>
+                                <td>
+                                    <input
+                                        data-bind="event: { 'change': UpdateCanvasHeight }, value: canvas_height"
+                                        style="padding: 3px; width: 100px" type='number' />
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Background:</b></td>
+                                <td>
+                                    <input
+                                        data-bind="event: { 'change': UpdateCanvasBgColor }, value: canvas_bg"
+                                        style="padding: 3px" type='color' />
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td><b>Color:</b></td>
+                                <td>
+                                    <input
+                                        data-bind="event: { 'change': UpdateCanvasColor }, value: canvas_color"
+                                        style="padding: 3px" type='color' />
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+                <div style="clear: both"></div>
+                <div style="width: 200px; margin-left: auto; margin-right: auto">
+                    <br>
+                    <button id="_____savechanges_cta"
+                        style="border: none; background: #13508a; padding: 12px; color: #fff">Save
+                        Changes</button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div style="clear: both"></div>
+
+    </div>
+</cta>

